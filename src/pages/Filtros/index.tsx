@@ -20,7 +20,10 @@ export default function Filtros({filtro,setFiltro}: Props) {
         <div className={styles.filtros}>
             {filtros.map((opcao)=> (
                 <button
-                    className={`${styles.filtros__filtro} ${filtro === opcao.id ? styles['filtros__filtro--ativo'] : ""}`}
+                    className={`
+                    ${styles.filtros__filtro} 
+                    ${filtro === opcao.id ? 
+                        styles['filtros__filtro--ativo'] : ""}`}
                     key={opcao.id}
                     onClick={()=> {selecionarFiltro(opcao)}}
                 >

@@ -3,9 +3,12 @@ import {ReactComponent as Logo} from "../../assets/logo.svg"
 import Buscador from "./Buscador";
 import {useState} from "react";
 import Filtros from "../Filtros";
+import Ordenador from "./Ordenador";
+import Itens from "./Itens";
 export default function Cardapio() {
     const [busca, setBusca] = useState("");
-    const [filtro, setFiltro] = useState<number | null>(null)
+    const [filtro, setFiltro] = useState<number | null>(null);
+    const [ordenador, setOrdenador] = useState("");
 
     return(
         <main>
@@ -15,9 +18,10 @@ export default function Cardapio() {
 
             <header className={styles.header}>
                 <div className={styles.header__text}>
-                    A cada do Código e da massa
+                    A casa do Código e da massa
                 </div>
             </header>
+
 
             <section className={styles.cardapio}>
                 <h3 className={styles.cardapio__titulo}>
@@ -28,9 +32,13 @@ export default function Cardapio() {
 
                     <div className={styles.cardapio__filtros}>
                         <Filtros filtro={filtro} setFiltro={setFiltro}/>
+                        <Ordenador ordenador={ordenador} setOrdenador={setOrdenador}/>
                     </div>
                 </h3>
+
+                <Itens/>
             </section>
+
         </main>
     )
 }
