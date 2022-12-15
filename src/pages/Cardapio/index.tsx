@@ -17,7 +17,7 @@ export default function Cardapio() {
             </nav>
 
             <header className={styles.header}>
-                <div className={styles.header__text}>
+                <div className={styles.header__text} style={{color:"black"}}>
                     A casa do Código e da massa
                 </div>
             </header>
@@ -36,7 +36,7 @@ export default function Cardapio() {
                     </div>
                 </h3>
 
-                <Itens/>
+                <Itens busca={busca} filtro={filtro} ordenador={ordenador}/>
             </section>
 
         </main>
